@@ -22,7 +22,7 @@ public class AVLTree {
         }
          
         private int getBalance (Node n) {
-        	return height (n.right) - height (n.left);
+        	return height (n.left) - height (n.right);
         }
 
         
@@ -260,13 +260,13 @@ public class AVLTree {
 					return cont;
 				}
 				else if (key < n.val) {
-					if (this.getBalance(n) == 1) {
+					if (this.getBalance(n) == -1) {
 						cont++;
 					}
 					n = n.left;
 				}
 				else {
-					if (this.getBalance(n) == -1) {
+					if (this.getBalance(n) == 1) {
 						cont++;
 					}
 					n = n.right;
